@@ -27,6 +27,6 @@ protected:
     UINT32 m_nFrameCount = 0;
     UINT32 m_nPlays = 0;        //播放几次
     UINT32 m_nCurFrame = 0;     //当前帧ID
-                                //UINT32 m_nCurPlays = 0;     //当前播放次数
+    //UINT32 m_nCurPlays = 0;     //当前播放次数
 };
 

@@ -26,7 +26,7 @@ BOOL CGifLoader::LoadImage(const wstring& strImg)
 
     m_nFrameCount = pBmp->GetFrameCount(&pDimensionIDs[0]);
     if (m_nFrameCount > 1)
-    {        int nSize = pBmp->GetPropertyItemSize(PropertyTagFrameDelay);        if (nSize)        {            m_pPropertyDelay = (Gdiplus::PropertyItem*)new BYTE[nSize];            if (Gdiplus::Ok != pBmp->GetPropertyItem(PropertyTagFrameDelay, nSize, m_pPropertyDelay))            {                free(m_pPropertyDelay);                m_pPropertyDelay = NULL;            }        }
+    {        int nSize = pBmp->GetPropertyItemSize(PropertyTagFrameDelay);        if (nSize)        {            m_pPropertyDelay = (Gdiplus::PropertyItem*)new BYTE[nSize];            if (Gdiplus::Ok != pBmp->GetPropertyItem(PropertyTagFrameDelay, nSize, m_pPropertyDelay))            {                delete[] m_pPropertyDelay;                m_pPropertyDelay = NULL;            }        }
         nSize = pBmp->GetPropertyItemSize(PropertyTagLoopCount);
         if (nSize)
         {
@@ -86,7 +86,7 @@ std::wstring CGifLoader::GetImageMimeType(Gdiplus::Bitmap* pBmp)
     Gdiplus::GetImageDecodersSize(&num, &size);
     if (size == 0) return strRes;
 
-    Gdiplus::ImageCodecInfo* pImageCodecInfo = (Gdiplus::ImageCodecInfo*)(malloc(size));
+    Gdiplus::ImageCodecInfo* pImageCodecInfo = (Gdiplus::ImageCodecInfo*)new BYTE[size];
     if (pImageCodecInfo == NULL) return strRes;
 
     GUID guid;
@@ -102,6 +102,6 @@ std::wstring CGifLoader::GetImageMimeType(Gdiplus::Bitmap* pBmp)
         }
     }
 
-    free(pImageCodecInfo);
+    delete[] pImageCodecInfo;
     return strRes;
 }
