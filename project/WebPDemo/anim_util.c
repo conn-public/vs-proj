@@ -222,7 +222,12 @@ static int ReadAnimatedWebP(const char filename[],
 
   memset(image, 0, sizeof(*image));
 
-  dec = WebPAnimDecoderNew(webp_data, NULL);
+  //we need bgra, so we can build gdi+ bitmap directly.
+  WebPAnimDecoderOptions opt;
+  memset(&opt, 0, sizeof(opt));
+  opt.color_mode = MODE_BGRA;
+  opt.use_threads = 0;
+  dec = WebPAnimDecoderNew(webp_data, &opt);
   if (dec == NULL) {
     //WFPRINTF(stderr, "Error parsing image: %s\n", (const W_CHAR*)filename);
     goto End;

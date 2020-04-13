@@ -29,6 +29,7 @@
 *.bsc
 *.user
 *.dep
+.opendb
 
 # ouput dir
 solution/.vs/

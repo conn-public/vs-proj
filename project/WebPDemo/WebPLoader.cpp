@@ -36,19 +36,8 @@ Bitmap* CWebPLoader::GetFrameAt(UINT32 nIndex, UINT32& nDelayMS)
     int rowsize = rc.Width * 4;
     for (int h = 0; h < rc.Height; ++h)
     {
-        LPBYTE pDstLine = pDst;
-        for (int w=0; w<rc.Width; ++w)
-        {
-            //RGB->BGR
-            pDstLine[0] = pSrc[2];
-            pDstLine[1] = pSrc[1];
-            pDstLine[2] = pSrc[0];
-            pDstLine[3] = pSrc[3];
-            pSrc += 4;
-            pDstLine += 4;
-        }
-        //memcpy(pDst, pSrc, rowsize);
-        //pSrc += rowsize;
+        memcpy(pDst, pSrc, rowsize);
+        pSrc += rowsize;
         pDst += bmd.Stride;
     }
     pBmp->UnlockBits(&bmd);

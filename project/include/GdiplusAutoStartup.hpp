@@ -7,8 +7,6 @@ class CGdiplusAutoStartup
 public:
     CGdiplusAutoStartup::CGdiplusAutoStartup()
     {
-        //DebugUtil::OutputFormatDebugStringA("CGdiplusAutoStartup() \n");
-
         Status Ret = Ok;
         GdiplusStartupInput gsi;
 
@@ -16,14 +14,12 @@ public:
 
         if (Ok != Ret)
         {
-            OutputDebugStringA("≥ı ºªØ GDI+  ß∞‹¡À \n");
+            OutputDebugStringA("Cannot init gdi+ \n");
         }
     }
 
     CGdiplusAutoStartup::~CGdiplusAutoStartup()
     {
-        //DebugUtil::OutputFormatDebugStringA("~CGdiplusAutoStartup() \n");
-
         if (0 != m_uToken)
         {
             GdiplusShutdown(m_uToken);
