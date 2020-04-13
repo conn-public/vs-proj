@@ -26,13 +26,17 @@ BOOL CGifLoader::LoadImage(const wstring& strImg)
 
     m_nFrameCount = pBmp->GetFrameCount(&pDimensionIDs[0]);
     if (m_nFrameCount > 1)
-    {        int nSize = pBmp->GetPropertyItemSize(PropertyTagFrameDelay);        if (nSize)        {            m_pPropertyDelay = (Gdiplus::PropertyItem*)new BYTE[nSize];            if (Gdiplus::Ok != pBmp->GetPropertyItem(PropertyTagFrameDelay, nSize, m_pPropertyDelay))            {                delete[] m_pPropertyDelay;                m_pPropertyDelay = NULL;            }        }
+    {        int nSize = pBmp->GetPropertyItemSize(PropertyTagFrameDelay);        if (nSize)        {            m_pPropertyDelay = (Gdiplus::PropertyItem*)new BYTE[nSize];            if (Gdiplus::Ok != pBmp->GetPropertyItem(PropertyTagFrameDelay, nSize, m_pPropertyDelay))            {                delete[] m_pPropertyDelay;                m_pPropertyDelay = NULL;            }
+            _ASSERT(m_pPropertyDelay->type == PropertyTagTypeLong);        }
         nSize = pBmp->GetPropertyItemSize(PropertyTagLoopCount);
         if (nSize)
         {
             Gdiplus::PropertyItem* pLoops = (Gdiplus::PropertyItem*)new BYTE[nSize];
             if (Gdiplus::Ok == pBmp->GetPropertyItem(PropertyTagLoopCount, nSize, pLoops))
-                m_nPlays = ((LONG*)pLoops->value)[0];
+            {
+                _ASSERT(pLoops->type == PropertyTagTypeShort);
+                m_nPlays = ((short*)pLoops->value)[0];
+            }
 
             delete[] pLoops;
         }
