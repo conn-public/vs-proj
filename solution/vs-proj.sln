@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{C9B1B90C-104F-403F-B36D-514E8629D8C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "include", "include", "{D54672AE-C338-4784-A5F4-C416DCD9F72D}"
+	ProjectSection(SolutionItems) = preProject
+		..\project\include\GdiplusAutoStartup.hpp = ..\project\include\GdiplusAutoStartup.hpp
+		..\project\include\StringUtil.hpp = ..\project\include\StringUtil.hpp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "third_party", "third_party", "{C47F792F-4F4A-46F4-861E-AA5F4571F2B8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libpng", "..\project\third_party\libpng\libpng.vcxproj", "{7DB10B50-CE00-4D7A-B322-6824F05D2FCB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "..\project\third_party\zlib\zlib.vcxproj", "{33134F61-C1AD-4B6F-9CEA-503A9F140C52}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libwebp", "..\project\third_party\libwebp\LibWebP.vcxproj", "{097D9F6C-FD0E-4CBC-9676-009012AAECA8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ApngDemo", "..\project\ApngDemo\ApngDemo.vcxproj", "{20DA10AD-C3FA-4827-8F12-0D442EA3A1E7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GifDemo", "..\project\GifDemo\GifDemo.vcxproj", "{935BA85D-C1B0-492D-9970-2AB5302A03E1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WebPDemo", "..\project\WebPDemo\WebPDemo.vcxproj", "{AF236CD7-9798-421F-8313-F38629017C07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DB10B50-CE00-4D7A-B322-6824F05D2FCB}.Debug|x64.ActiveCfg = Debug|x64
+		{7DB10B50-CE00-4D7A-B322-6824F05D2FCB}.Debug|x64.Build.0 = Debug|x64
+		{7DB10B50-CE00-4D7A-B322-6824F05D2FCB}.Debug|x86.ActiveCfg = Debug|Win32
+		{7DB10B50-CE00-4D7A-B322-6824F05D2FCB}.Debug|x86.Build.0 = Debug|Win32
+		{7DB10B50-CE00-4D7A-B322-6824F05D2FCB}.Release|x64.ActiveCfg = Release|x64
+		{7DB10B50-CE00-4D7A-B322-6824F05D2FCB}.Release|x64.Build.0 = Release|x64
+		{7DB10B50-CE00-4D7A-B322-6824F05D2FCB}.Release|x86.ActiveCfg = Release|Win32
+		{7DB10B50-CE00-4D7A-B322-6824F05D2FCB}.Release|x86.Build.0 = Release|Win32
+		{33134F61-C1AD-4B6F-9CEA-503A9F140C52}.Debug|x64.ActiveCfg = Debug|x64
+		{33134F61-C1AD-4B6F-9CEA-503A9F140C52}.Debug|x64.Build.0 = Debug|x64
+		{33134F61-C1AD-4B6F-9CEA-503A9F140C52}.Debug|x86.ActiveCfg = Debug|Win32
+		{33134F61-C1AD-4B6F-9CEA-503A9F140C52}.Debug|x86.Build.0 = Debug|Win32
+		{33134F61-C1AD-4B6F-9CEA-503A9F140C52}.Release|x64.ActiveCfg = Release|x64
+		{33134F61-C1AD-4B6F-9CEA-503A9F140C52}.Release|x64.Build.0 = Release|x64
+		{33134F61-C1AD-4B6F-9CEA-503A9F140C52}.Release|x86.ActiveCfg = Release|Win32
+		{33134F61-C1AD-4B6F-9CEA-503A9F140C52}.Release|x86.Build.0 = Release|Win32
+		{097D9F6C-FD0E-4CBC-9676-009012AAECA8}.Debug|x64.ActiveCfg = Debug|x64
+		{097D9F6C-FD0E-4CBC-9676-009012AAECA8}.Debug|x64.Build.0 = Debug|x64
+		{097D9F6C-FD0E-4CBC-9676-009012AAECA8}.Debug|x86.ActiveCfg = Debug|Win32
+		{097D9F6C-FD0E-4CBC-9676-009012AAECA8}.Debug|x86.Build.0 = Debug|Win32
+		{097D9F6C-FD0E-4CBC-9676-009012AAECA8}.Release|x64.ActiveCfg = Release|x64
+		{097D9F6C-FD0E-4CBC-9676-009012AAECA8}.Release|x64.Build.0 = Release|x64
+		{097D9F6C-FD0E-4CBC-9676-009012AAECA8}.Release|x86.ActiveCfg = Release|Win32
+		{097D9F6C-FD0E-4CBC-9676-009012AAECA8}.Release|x86.Build.0 = Release|Win32
+		{20DA10AD-C3FA-4827-8F12-0D442EA3A1E7}.Debug|x64.ActiveCfg = Debug|x64
+		{20DA10AD-C3FA-4827-8F12-0D442EA3A1E7}.Debug|x64.Build.0 = Debug|x64
+		{20DA10AD-C3FA-4827-8F12-0D442EA3A1E7}.Debug|x86.ActiveCfg = Debug|Win32
+		{20DA10AD-C3FA-4827-8F12-0D442EA3A1E7}.Debug|x86.Build.0 = Debug|Win32
+		{20DA10AD-C3FA-4827-8F12-0D442EA3A1E7}.Release|x64.ActiveCfg = Release|x64
+		{20DA10AD-C3FA-4827-8F12-0D442EA3A1E7}.Release|x64.Build.0 = Release|x64
+		{20DA10AD-C3FA-4827-8F12-0D442EA3A1E7}.Release|x86.ActiveCfg = Release|Win32
+		{20DA10AD-C3FA-4827-8F12-0D442EA3A1E7}.Release|x86.Build.0 = Release|Win32
+		{935BA85D-C1B0-492D-9970-2AB5302A03E1}.Debug|x64.ActiveCfg = Debug|x64
+		{935BA85D-C1B0-492D-9970-2AB5302A03E1}.Debug|x64.Build.0 = Debug|x64
+		{935BA85D-C1B0-492D-9970-2AB5302A03E1}.Debug|x86.ActiveCfg = Debug|Win32
+		{935BA85D-C1B0-492D-9970-2AB5302A03E1}.Debug|x86.Build.0 = Debug|Win32
+		{935BA85D-C1B0-492D-9970-2AB5302A03E1}.Release|x64.ActiveCfg = Release|x64
+		{935BA85D-C1B0-492D-9970-2AB5302A03E1}.Release|x64.Build.0 = Release|x64
+		{935BA85D-C1B0-492D-9970-2AB5302A03E1}.Release|x86.ActiveCfg = Release|Win32
+		{935BA85D-C1B0-492D-9970-2AB5302A03E1}.Release|x86.Build.0 = Release|Win32
+		{AF236CD7-9798-421F-8313-F38629017C07}.Debug|x64.ActiveCfg = Debug|x64
+		{AF236CD7-9798-421F-8313-F38629017C07}.Debug|x64.Build.0 = Debug|x64
+		{AF236CD7-9798-421F-8313-F38629017C07}.Debug|x86.ActiveCfg = Debug|Win32
+		{AF236CD7-9798-421F-8313-F38629017C07}.Debug|x86.Build.0 = Debug|Win32
+		{AF236CD7-9798-421F-8313-F38629017C07}.Release|x64.ActiveCfg = Release|x64
+		{AF236CD7-9798-421F-8313-F38629017C07}.Release|x64.Build.0 = Release|x64
+		{AF236CD7-9798-421F-8313-F38629017C07}.Release|x86.ActiveCfg = Release|Win32
+		{AF236CD7-9798-421F-8313-F38629017C07}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7DB10B50-CE00-4D7A-B322-6824F05D2FCB} = {C47F792F-4F4A-46F4-861E-AA5F4571F2B8}
+		{33134F61-C1AD-4B6F-9CEA-503A9F140C52} = {C47F792F-4F4A-46F4-861E-AA5F4571F2B8}
+		{097D9F6C-FD0E-4CBC-9676-009012AAECA8} = {C47F792F-4F4A-46F4-861E-AA5F4571F2B8}
+		{20DA10AD-C3FA-4827-8F12-0D442EA3A1E7} = {C9B1B90C-104F-403F-B36D-514E8629D8C7}
+		{935BA85D-C1B0-492D-9970-2AB5302A03E1} = {C9B1B90C-104F-403F-B36D-514E8629D8C7}
+		{AF236CD7-9798-421F-8313-F38629017C07} = {C9B1B90C-104F-403F-B36D-514E8629D8C7}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,38 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.sbr
+
+# VS temp file
+*.sdf
+*.db
+*.pdb
+*.ipdb
+*.idb
+*.obj
+*.iobj
+*.map
+*.pdb
+*.ncb
+*.suo
+*.pch
+*.bsc
+*.user
+*.dep
+
+# ouput dir
+solution/.vs/
+solution/ipch/
+solution/Debug/
+solution/Release/
+solution/x64/
