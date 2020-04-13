@@ -1,9 +1,11 @@
 #pragma once
 #include "png.h"
 
+#include <gdiplus.h>
 #include <vector>
 #include <string>
 #include <memory>
+using namespace Gdiplus;
 using namespace std;
 
 struct ApngFrame

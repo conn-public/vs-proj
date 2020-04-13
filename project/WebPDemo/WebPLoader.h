@@ -1,7 +1,9 @@
 #pragma once
 #include "anim_util.h"
 
+#include <gdiplus.h>
 #include <string>
+using namespace Gdiplus;
 using namespace std;
 
 class CWebPLoader

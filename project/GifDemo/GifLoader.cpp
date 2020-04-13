@@ -74,3 +74,34 @@ void CGifLoader::CleanUp()
         m_pPropertyDelay = NULL;
     }
 }
+
+std::wstring CGifLoader::GetImageMimeType(Gdiplus::Bitmap* pBmp)
+{
+    std::wstring strRes = L"image/unknown";
+    if (!pBmp) return strRes;
+
+    UINT  num = 0;          // number of image encoders
+    UINT  size = 0;         // size of the image encoder array in bytes
+
+    Gdiplus::GetImageDecodersSize(&num, &size);
+    if (size == 0) return strRes;
+
+    Gdiplus::ImageCodecInfo* pImageCodecInfo = (Gdiplus::ImageCodecInfo*)(malloc(size));
+    if (pImageCodecInfo == NULL) return strRes;
+
+    GUID guid;
+    pBmp->GetRawFormat(&guid);
+
+    Gdiplus::GetImageDecoders(num, size, pImageCodecInfo);
+    for (UINT j = 0; j < num; ++j)
+    {
+        if (IsEqualGUID(pImageCodecInfo[j].FormatID, guid))
+        {
+            strRes = pImageCodecInfo[j].MimeType;
+            break;
+        }
+    }
+
+    free(pImageCodecInfo);
+    return strRes;
+}
